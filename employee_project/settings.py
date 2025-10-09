@@ -100,3 +100,15 @@ REST_FRAMEWORK = {
         "rest_framework.filters.OrderingFilter",
     ],
 }
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": False,  # hide Django login; we use tokens
+    "SECURITY_DEFINITIONS": {
+        "TokenAuth": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": "Type exactly: Token <your-token-here>",
+        }
+    },
+}
+
